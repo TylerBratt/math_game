@@ -11,7 +11,7 @@ def question
   print "> "
   answer = $stdin.gets.chomp.to_i
   
-  if(!check_answer(answer))
+  if (!check_answer(answer))
     $p1.life -= 1
   end
   
@@ -31,6 +31,7 @@ def check_answer(answer)
   print "    "
   puts (answer == $num1.number + $num2.number) ? "#{answer} Noice!" : "Nope! it's #{$num1.number + $num2.number}..."
   puts""
+  answer == $num1.number + $num2.number
 end
 
 def next_turn(current_player)
@@ -56,7 +57,7 @@ def next_turn(current_player)
 
   
   
-  puts "#{current_player.name} What does #{$num1.roll} plus #{$num2.roll} equal"
+  puts "#{current_player.name}: What does #{$num1.roll} plus #{$num2.roll} equal"
   print "> "
   answer = $stdin.gets.chomp.to_i
   
